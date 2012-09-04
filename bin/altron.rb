@@ -10,7 +10,7 @@ class AlTron < Freeplay::Player
 
     # First attempt
     if board.last_opponent_move
-      logger.info("1: searching for an open top/right adjacent space")
+      logger.info("1: searching to go to top/right open space")
 
       allowed = board.adjacent(*board.last_opponent_move)
       match = allowed.find_all{|(ax, ay)|board[ax, ay] == :empty}
@@ -29,10 +29,10 @@ class AlTron < Freeplay::Player
         end
       end
     end
-    
+
     [x, y]
-    
-  end 
+
+  end
 end
 
 
